@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calvin's Weather Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+</head>
+
+<body>
+    <!--HEADER-->
+    <h1>WEATHER DASHBOARD</h1>
+
+
+
+
+    <!--SIDE NAV BAR-->
+    <div class="row">
+        <div class="col-md-3 search-bar">
+            <h3>Search for a City:</h3>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="City Name" aria-label="City Name"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+            </div>
+            <!--LIST OF CITIES-->
+            <div class="city-container"></div>
+        </div>
+
+
+        <!--DISPLAY AREA-->
+        <div class="col-md-9">
+            <div class="container">
+                <h2 id="cityNameDisplay">SEARCH RESULT NAME</h2>
+                <br>
+                <div class="row">
+                    <ul>
+                        <li id="temperature">Temperature: </li>
+                        <li id="humidity">Humidity: </li>
+                        <li id="windSpeed">Wind Speed: </li>
+                        <li id="uvIndex">UV Index: </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--5-Day FORECAST SECTION-->
+            <div class="container">
+
+                <h2>5-Day Forecast:</h2>
+
+                <br>
+                <!--FORECAST-->
+                <div class="row">
+                    <div class="card-group">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">test</h5>
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">test</h5>
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">test</h5>
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">test</h5>
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">test</h5>
+                                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                <p class="card-text">Temp: </p>
+                                <p class="card-text">Humidity: </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!--Footy?-->
+</body>
+
+</html>

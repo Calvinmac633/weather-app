@@ -1,0 +1,25 @@
+* {
+    overflow: hidden;
+}
+
+h1 {
+    background-color: rgb(52,58,64);
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px 0;
+}
+.search-bar {
+    padding: 0 2rem;
+}
+.container {
+    padding: 10px;
+    box-sizing: border-box;
+    border: rgb(52,58,64) 1px solid;
+    margin: 0;
+}
+h2 {
+    margin: 0;
+}
+.card {
+    margin: 0 15px;
+}
