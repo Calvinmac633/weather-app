@@ -22,7 +22,8 @@ h3 {
     padding: 0 2rem;
 }
 .searchButton {
-    color: rgb(233, 221, 86);
+    color: rgb(207, 207, 207);
+    background-color: rgba(245, 222, 179, 0.349);
 }
 .container {
     padding: 0;
@@ -70,4 +71,7 @@ h2 {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     margin: 2.5px 0;
+}
+p {
+    font-size: .8rem;
 }
