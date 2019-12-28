@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
 
-    var card1 = $("#card1").text(moment().add(1, "days").format('l'))
-    var card2 = $("#card2").text(moment().add(2, "days").format('l'))
-    var card3 = $("#card3").text(moment().add(3, "days").format('l'))
-    var card4 = $("#card4").text(moment().add(4, "days").format('l'))
-    var card5 = $("#card5").text(moment().add(5, "days").format('l'))
+    var card1 = $("#card1").text(moment().add(1, "days").format('l') + " ")
+    var card2 = $("#card2").text(moment().add(2, "days").format('l') + " ")
+    var card3 = $("#card3").text(moment().add(3, "days").format('l') + " ")
+    var card4 = $("#card4").text(moment().add(4, "days").format('l') + " ")
+    var card5 = $("#card5").text(moment().add(5, "days").format('l') + " ")
 
 
     var cityArr = [];
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
 
 
-
+        //FORECAST API
         var APIKey = "166a433c57516f51dfab1f7edaed8413";
         var cityName = $("#cityNameDisplay").text()
         console.log(cityName)
@@ -73,36 +73,21 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response)
             console.log()
-            $(".card-text-temp-1").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[1].temp.max)+ "°F" + " || Lo: " + Math.round(response.list[1].temp.min) + "°F")
+            $(".card-text-temp-1").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[1].temp.max) + "°F" + " || Lo: " + Math.round(response.list[1].temp.min) + "°F")
             $(".card-text-hum-1").html("Humidity: " + response.list[1].humidity + "%")
-            $(".card-text-temp-2").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[2].temp.max)+ "°F" + " || Lo: " + Math.round(response.list[2].temp.min) + "°F")
+            $(".card-text-temp-2").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[2].temp.max) + "°F" + " || Lo: " + Math.round(response.list[2].temp.min) + "°F")
             $(".card-text-hum-2").html("Humidity: " + response.list[2].humidity + "%")
-            $(".card-text-temp-3").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[3].temp.max)+ "°F" + " || Lo: " + Math.round(response.list[3].temp.min) + "°F")
+            $(".card-text-temp-3").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[3].temp.max) + "°F" + " || Lo: " + Math.round(response.list[3].temp.min) + "°F")
             $(".card-text-hum-3").html("Humidity: " + response.list[3].humidity + "%")
-            $(".card-text-temp-4").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[4].temp.max)+ "°F" + " || Lo: " + Math.round(response.list[4].temp.min) + "°F")
+            $(".card-text-temp-4").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[4].temp.max) + "°F" + " || Lo: " + Math.round(response.list[4].temp.min) + "°F")
             $(".card-text-hum-4").html("Humidity: " + response.list[4].humidity + "%")
-            $(".card-text-temp-5").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[5].temp.max)+ "°F" + " || Lo: " + Math.round(response.list[5].temp.min) + "°F")
+            $(".card-text-temp-5").html("Temperature:" + "<br>" + "High: " + Math.round(response.list[5].temp.max) + "°F" + " || Lo: " + Math.round(response.list[5].temp.min) + "°F")
             $(".card-text-hum-5").html("Humidity: " + response.list[5].humidity + "%")
 
-            var cards = []
+
 
             var conditions = response.list[0].weather[0].main
 
-            function attachIcon(element) {
-                if (conditions === "Clouds") {
-                    image = $("<i>").addClass("fas fa-cloud-sun")
-                    element.append(image)
-                } else if (conditions === "Rain") {
-                    image = $("<i>").addClass("fas fa-cloud-rain")
-                    element.append(image)
-                } else if (conditions === "Clear") {
-                    image = $("<i>").addClass("far fa-sun")
-                    element.append(image)
-                } else if (conditions === "Mist") {
-                    image = $("<i>").addClass("fas fa-smog")
-                    element.append(image)
-                }
-            }
 
             if (conditions === "Clouds") {
                 image = $("<i>").addClass("fas fa-cloud-sun")
@@ -127,8 +112,37 @@ $(document).ready(function () {
                 $("body").attr("style", "background-image: url(https://ianwcanoe.files.wordpress.com/2013/01/warm-mist-landscape.jpg)")
             }
 
+                function attachIcon(element, i) {
+                var conditions = response.list[i].weather[0].main
+
+                if (conditions === "Clouds") {
+                    image = $("<i>").addClass("fas fa-cloud-sun")
+                    element.append(image)
+                } else if (conditions === "Rain") {
+                    image = $("<i>").addClass("fas fa-cloud-rain")
+                    element.append(image)
+                } else if (conditions === "Clear") {
+                    image = $("<i>").addClass("far fa-sun")
+                    element.append(image)
+                } else if (conditions === "Mist") {
+                    image = $("<i>").addClass("fas fa-smog")
+                    element.append(image)
+                }
+            }
+
+            attachIcon(card1, 1);
+            attachIcon(card2, 2);
+            attachIcon(card3, 3);
+            attachIcon(card4, 4);
+            attachIcon(card5, 5);
+            console.log(card1)
+
 
             
+
+
+
+
 
 
 
@@ -151,7 +165,7 @@ $(document).ready(function () {
         })
     }
 
-    
+
 
 
 
