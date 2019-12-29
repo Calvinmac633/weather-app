@@ -58,6 +58,35 @@ $(document).ready(function () {
                 $("#windSpeed").text("Wind Speed: " + response.wind.speed)
                 $("#uvIndex").text("UV Index: " + response.main)
             });
+
+            function getUVIndex() {
+                var APIKey = "f622a0d29a6db06bb27fc0d894ac978e";
+
+                var lat = 39.38;
+                var lng = -76.61;
+                var alt = "";
+                var ozone = "";
+                var dt = "";
+               
+                $.ajax({
+                  type: 'GET',
+                  dataType: 'json',
+                  beforeSend: function(request) {
+                    request.setRequestHeader('x-access-token', 'f622a0d29a6db06bb27fc0d894ac978e');
+                  },
+                  url: 'https://api.openuv.io/api/v1/uv?lat=' + lat + '&lng=' + lng,
+                //   + '&alt=' + alt + '&ozone=' + ozone + '&dt=' + dt
+                  success: function(response) {
+                    //handle successful response
+                    console.log(response)
+                    $("#uvIndex").text("UV Index: " + response.result.uv)
+                  },
+                  error: function(response) {
+                    // handle error response
+                  }
+                });
+               }
+               getUVIndex()
         }
         generateDisplay();
 
