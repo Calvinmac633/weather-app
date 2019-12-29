@@ -15,6 +15,11 @@ $(document).ready(function () {
 
     $(".searchButton").on("click", function (element) {
         event.preventDefault();
+        var card1 = $("#card1").text(moment().add(1, "days").format('l') + " ")
+        var card2 = $("#card2").text(moment().add(2, "days").format('l') + " ")
+        var card3 = $("#card3").text(moment().add(3, "days").format('l') + " ")
+        var card4 = $("#card4").text(moment().add(4, "days").format('l') + " ")
+        var card5 = $("#card5").text(moment().add(5, "days").format('l') + " ")
         // var cityArr = [(localStorage.getItem("city names"))];
 
         var cityName = $(".inputBox").val().trim();
@@ -110,10 +115,17 @@ $(document).ready(function () {
                 $("#cityNameDisplay").text(response.city.name + " (" + moment().format('l') + ") ")
                 $("#cityNameDisplay").append(image);
                 $("body").attr("style", "background-image: url(https://ianwcanoe.files.wordpress.com/2013/01/warm-mist-landscape.jpg)")
+            } else if (conditions === "Snow") {
+                image = $("<i>").addClass("far fa-snowflake")
+                $("#cityNameDisplay").text(response.city.name + " (" + moment().format('l') + ") ")
+                $("#cityNameDisplay").append(image);
+                $("body").attr("style", "background-image: url(https://media.nbcconnecticut.com/2019/09/2bbad92fa4844225b9c4a90efd4cfa61.jpeg.jpg?fit=4032%2C2793)")
             }
 
-                function attachIcon(element, i) {
+            function attachIcon(element, i) {
+
                 var conditions = response.list[i].weather[0].main
+                console.log(conditions)
 
                 if (conditions === "Clouds") {
                     image = $("<i>").addClass("fas fa-cloud-sun")
@@ -127,6 +139,9 @@ $(document).ready(function () {
                 } else if (conditions === "Mist") {
                     image = $("<i>").addClass("fas fa-smog")
                     element.append(image)
+                } else if (conditions === "Snow") {
+                    image = $("<i>").addClass("far fa-snowflake")
+                    element.append(image)
                 }
             }
 
@@ -138,7 +153,7 @@ $(document).ready(function () {
             console.log(card1)
 
 
-            
+
 
 
 
