@@ -266,7 +266,7 @@ $(document).ready(function () {
                     console.log(response)
                     $("#temperature").text("Temperature: " + Math.round(response.main.temp) + "°F")
                     $("#humidity").text("Humidity: " + response.main.humidity + "%")
-                    $("#windSpeed").text("Wind Speed: " + response.wind.speed)
+                    $("#windSpeed").text("Wind Speed: " + response.wind.speed + " mph")
                     $("#uvIndex").text("UV Index: ")
     
                     function getUVIndex() {
