@@ -8,3 +8,5 @@ To avoid typing the city you just searched again, you can click on the city's bu
 
 The app uses two different APIs to gather all of the information presented.
 Therefore, the user's computer must have an internet connection in order to work properly.
+
+![WeatherApp](https://user-images.githubusercontent.com/54246740/83571824-81835780-a4f6-11ea-8814-dbd8f740fb79.jpg)
